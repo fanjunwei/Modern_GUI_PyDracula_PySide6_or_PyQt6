@@ -14,21 +14,30 @@
 #
 # ///////////////////////////////////////////////////////////////
 
-import sys
 import os
-import platform
+import sys
+
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QMainWindow
+
+from modules.app_functions import AppFunctions
+from modules.app_settings import Settings
+from modules.ui_functions import UIFunctions
+from modules.ui_main import Ui_MainWindow
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-from modules import *
-from widgets import *
-os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
+
+os.environ["QT_FONT_DPI"] = "96"  # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
 widgets = None
 
-class MainWindow(QMainWindow):
+
+class MainWindow(UIFunctions, AppFunctions, QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
 
@@ -53,7 +62,7 @@ class MainWindow(QMainWindow):
 
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////
-        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
+        widgets.toggleButton.clicked.connect(lambda: self.toggleMenu(True))
 
         # SET UI DEFINITIONS
         # ///////////////////////////////////////////////////////////////
@@ -61,7 +70,7 @@ class MainWindow(QMainWindow):
 
         # QTableWidget PARAMETERS
         # ///////////////////////////////////////////////////////////////
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
@@ -74,13 +83,15 @@ class MainWindow(QMainWindow):
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
+            self.toggleLeftBox(True)
+
         widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
         widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
-            UIFunctions.toggleRightBox(self, True)
+            self.toggleRightBox(True)
+
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
 
         # SHOW APP
@@ -90,21 +101,22 @@ class MainWindow(QMainWindow):
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
         useCustomTheme = False
-        themeFile = "themes\py_dracula_light.qss"
+        themeFile = "themes/py_dracula_light.qss"
 
         # SET THEME AND HACKS
         if useCustomTheme:
             # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
+            self.theme(themeFile, True)
 
             # SET HACKS
-            AppFunctions.setThemeHack(self)
+            self.setThemeHack()
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
-        widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
-
+        widgets.btn_home.setStyleSheet(
+            UIFunctions.selectMenu(widgets.btn_home.styleSheet())
+        )
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
@@ -117,27 +129,26 @@ class MainWindow(QMainWindow):
         # SHOW HOME PAGE
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
-            UIFunctions.resetStyle(self, btnName)
+            self.resetStyle(btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
         if btnName == "btn_widgets":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
-            UIFunctions.resetStyle(self, btnName)
+            self.resetStyle(btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW NEW PAGE
         if btnName == "btn_new":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+            widgets.stackedWidget.setCurrentWidget(widgets.new_page)  # SET PAGE
+            self.resetStyle(btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "btn_save":
             print("Save BTN clicked!")
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
@@ -153,9 +164,10 @@ class MainWindow(QMainWindow):
 
         # PRINT MOUSE EVENTS
         if event.buttons() == Qt.LeftButton:
-            print('Mouse click: LEFT CLICK')
+            print("Mouse click: LEFT CLICK")
         if event.buttons() == Qt.RightButton:
-            print('Mouse click: RIGHT CLICK')
+            print("Mouse click: RIGHT CLICK")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
