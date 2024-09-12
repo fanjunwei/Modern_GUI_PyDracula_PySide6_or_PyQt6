@@ -17,12 +17,15 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 
-from PySide6.QtCore import QEasingCurve, QEvent, QTimer
+from PySide6.QtCore import QEasingCurve
 from PySide6.QtCore import QParallelAnimationGroup
 from PySide6.QtCore import QPropertyAnimation
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QIcon, QColor
-from PySide6.QtWidgets import QPushButton, QGraphicsDropShadowEffect, QSizeGrip
+from PySide6.QtGui import QColor
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import QGraphicsDropShadowEffect
+from PySide6.QtWidgets import QPushButton
+from PySide6.QtWidgets import QSizeGrip
 
 from modules.app_settings import Settings
 from widgets import CustomGrip
@@ -37,7 +40,7 @@ class UIFunctions(object):
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
-        if status == False:
+        if status is False:
             self.showMaximized()
             GLOBAL_STATE = True
             self.ui.appMargins.setContentsMargins(0, 0, 0, 0)
@@ -106,16 +109,13 @@ class UIFunctions(object):
             # GET WIDTH
             width = self.ui.extraLeftBox.width()
             widthRightBox = self.ui.extraRightBox.width()
-            maxExtend = Settings.LEFT_BOX_WIDTH
             color = Settings.BTN_LEFT_BOX_COLOR
-            standard = 0
 
             # GET BTN STYLE
             style = self.ui.toggleLeftBox.styleSheet()
 
             # SET MAX WIDTH
             if width == 0:
-                widthExtended = maxExtend
                 # SELECT BTN
                 self.ui.toggleLeftBox.setStyleSheet(style + color)
                 if widthRightBox != 0:
@@ -124,7 +124,6 @@ class UIFunctions(object):
                         style.replace(Settings.BTN_RIGHT_BOX_COLOR, "")
                     )
             else:
-                widthExtended = standard
                 # RESET BTN
                 self.ui.toggleLeftBox.setStyleSheet(style.replace(color, ""))
 
@@ -137,16 +136,13 @@ class UIFunctions(object):
             # GET WIDTH
             width = self.ui.extraRightBox.width()
             widthLeftBox = self.ui.extraLeftBox.width()
-            maxExtend = Settings.RIGHT_BOX_WIDTH
             color = Settings.BTN_RIGHT_BOX_COLOR
-            standard = 0
 
             # GET BTN STYLE
             style = self.ui.settingsTopBtn.styleSheet()
 
             # SET MAX WIDTH
             if width == 0:
-                widthExtended = maxExtend
                 # SELECT BTN
                 self.ui.settingsTopBtn.setStyleSheet(style + color)
                 if widthLeftBox != 0:
@@ -155,7 +151,6 @@ class UIFunctions(object):
                         style.replace(Settings.BTN_LEFT_BOX_COLOR, "")
                     )
             else:
-                widthExtended = standard
                 # RESET BTN
                 self.ui.settingsTopBtn.setStyleSheet(style.replace(color, ""))
 
