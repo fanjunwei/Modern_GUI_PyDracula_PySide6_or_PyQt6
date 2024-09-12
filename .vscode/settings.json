@@ -1,0 +1,4 @@
+{
+    "pyqt-integration.pyuic.compile.filepath": "modules/ui_${ui_name}.py",
+    "pyqt-integration.pyrcc.compile.filepath": "modules/${qrc_name}_rc.py"
+}
