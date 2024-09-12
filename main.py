@@ -50,15 +50,19 @@ class MainWindow(UIFunctions, AppFunctions, QMainWindow):
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
-        Settings.ENABLE_CUSTOM_TITLE_BAR = True
+        # 判断操作系统，如果为 mac 系统
+        if os.name == "posix":
+            Settings.ENABLE_CUSTOM_TITLE_BAR = False
+        else:
+            Settings.ENABLE_CUSTOM_TITLE_BAR = True
 
         # APP NAME
         # ///////////////////////////////////////////////////////////////
-        title = "PyDracula - Modern GUI"
-        description = "PyDracula APP - Theme with colors based on Dracula for Python."
+        title = "SQ Cut"
+        wname = "工程名称"
         # APPLY TEXTS
         self.setWindowTitle(title)
-        widgets.titleRightInfo.setText(description)
+        widgets.workspaceName.setText(wname)
 
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////

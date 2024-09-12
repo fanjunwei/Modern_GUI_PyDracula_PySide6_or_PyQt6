@@ -230,12 +230,12 @@ class UIFunctions(object):
     # START - GUI DEFINITIONS
     # ///////////////////////////////////////////////////////////////
     def uiDefinitions(self):
-        def dobleClickMaximizeRestore(event):
-            # IF DOUBLE CLICK CHANGE STATUS
-            if event.type() == QEvent.MouseButtonDblClick:
-                QTimer.singleShot(250, lambda: UIFunctions.maximize_restore(self))
+        # def dobleClickMaximizeRestore(event):
+        #     # IF DOUBLE CLICK CHANGE STATUS
+        #     if event.type() == QEvent.MouseButtonDblClick:
+        #         QTimer.singleShot(250, lambda: UIFunctions.maximize_restore(self))
 
-        self.ui.titleRightInfo.mouseDoubleClickEvent = dobleClickMaximizeRestore
+        # self.ui.workspaceName.mouseDoubleClickEvent = dobleClickMaximizeRestore
 
         if Settings.ENABLE_CUSTOM_TITLE_BAR:
             # STANDARD TITLE BAR
@@ -243,17 +243,17 @@ class UIFunctions(object):
             self.setAttribute(Qt.WA_TranslucentBackground)
 
             # MOVE WINDOW / MAXIMIZE / RESTORE
-            def moveWindow(event):
-                # IF MAXIMIZED CHANGE TO NORMAL
-                if UIFunctions.returStatus(self):
-                    UIFunctions.maximize_restore(self)
-                # MOVE WINDOW
-                if event.buttons() == Qt.LeftButton:
-                    self.move(self.pos() + event.globalPos() - self.dragPos)
-                    self.dragPos = event.globalPos()
-                    event.accept()
+            # def moveWindow(event):
+            #     # IF MAXIMIZED CHANGE TO NORMAL
+            #     if UIFunctions.returStatus(self):
+            #         UIFunctions.maximize_restore(self)
+            #     # MOVE WINDOW
+            #     if event.buttons() == Qt.LeftButton:
+            #         self.move(self.pos() + event.globalPos() - self.dragPos)
+            #         self.dragPos = event.globalPos()
+            #         event.accept()
 
-            self.ui.titleRightInfo.mouseMoveEvent = moveWindow
+            # self.ui.workspaceName.mouseMoveEvent = moveWindow
 
             # CUSTOM GRIPS
             self.left_grip = CustomGrip(self, Qt.LeftEdge, True)

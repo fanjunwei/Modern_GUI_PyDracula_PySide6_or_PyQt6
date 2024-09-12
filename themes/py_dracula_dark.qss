@@ -115,7 +115,7 @@ Left Menu */
 }
 
 /* Title Menu */
-#titleRightInfo { padding-left: 10px; }
+#workspaceName { padding-left: 10px; }
 
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////

@@ -119,7 +119,7 @@ Left Menu */
 }
 
 /* Title Menu */
-#titleRightInfo { padding-left: 10px; }
+#workspaceName { padding-left: 10px; }
 
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -179,7 +179,7 @@ Content App */
 #contentBottom{
 	border-top: 3px solid #bd93f9;
 }
-#titleRightInfo{
+#workspaceName{
     color: #f8f8f2;
 }
 

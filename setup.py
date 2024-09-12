@@ -14,10 +14,10 @@ target = Executable(
 
 # SETUP CX FREEZE
 setup(
-    name = "PyDracula",
+    name = "SQ Cut",
     version = "1.0",
-    description = "Modern GUI for Python applications",
-    author = "Wanderson M. Pimenta",
+    description = "简单快速的剪辑工具",
+    author = "fanjunwei",
     options = {'build_exe' : {'include_files' : files}},
     executables = [target]
     
