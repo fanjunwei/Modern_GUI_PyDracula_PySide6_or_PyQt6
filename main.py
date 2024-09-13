@@ -122,9 +122,7 @@ class MainWindow(UIFunctions, AppFunctions, QMainWindow):
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
-        widgets.btn_home.setStyleSheet(
-            UIFunctions.selectMenu(widgets.btn_home.styleSheet())
-        )
+        widgets.btn_home.setChecked(True)
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
@@ -137,20 +135,20 @@ class MainWindow(UIFunctions, AppFunctions, QMainWindow):
         # SHOW HOME PAGE
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
-            self.resetStyle(btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            self.resetOtherMenuStyle(btnName)
+            btn.setChecked(True)
 
         # SHOW WIDGETS PAGE
         if btnName == "btn_widgets":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
-            self.resetStyle(btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            self.resetOtherMenuStyle(btnName)
+            btn.setChecked(True)
 
         # SHOW NEW PAGE
         if btnName == "btn_new":
             widgets.stackedWidget.setCurrentWidget(widgets.new_page)  # SET PAGE
-            self.resetStyle(btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            self.resetOtherMenuStyle(btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setChecked(True)
 
         if btnName == "btn_save":
             print("Save BTN clicked!")

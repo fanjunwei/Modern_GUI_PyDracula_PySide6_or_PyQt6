@@ -193,27 +193,16 @@ class UIFunctions(object):
 
     # SELECT/DESELECT MENU
     # ///////////////////////////////////////////////////////////////
-    # SELECT
-    def selectMenu(getStyle):
-        select = getStyle + Settings.MENU_SELECTED_STYLESHEET
-        return select
-
     # DESELECT
     def deselectMenu(getStyle):
         deselect = getStyle.replace(Settings.MENU_SELECTED_STYLESHEET, "")
         return deselect
 
-    # START SELECTION
-    def selectStandardMenu(self, widget):
-        for w in self.ui.topMenu.findChildren(QPushButton):
-            if w.objectName() == widget:
-                w.setStyleSheet(UIFunctions.selectMenu(w.styleSheet()))
-
     # RESET SELECTION
-    def resetStyle(self, widget):
+    def resetOtherMenuStyle(self, current_widget_name):
         for w in self.ui.topMenu.findChildren(QPushButton):
-            if w.objectName() != widget:
-                w.setStyleSheet(UIFunctions.deselectMenu(w.styleSheet()))
+            if w.objectName() != current_widget_name:
+                w.setChecked(False)
 
     # IMPORT THEMES FILES QSS/CSS
     # ///////////////////////////////////////////////////////////////

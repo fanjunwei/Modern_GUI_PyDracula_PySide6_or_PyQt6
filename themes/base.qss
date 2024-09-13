@@ -54,67 +54,34 @@ Left Menu */
     background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
-	background-color: transparent;
 	text-align: left;
 	padding-left: 44px;
 }
-/* #topMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
-}
-#topMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
-	color: rgb(255, 255, 255);
-} */
+
 #bottomMenu .QPushButton {	
 	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 20px solid transparent;
-	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
 }
-/* #bottomMenu .QPushButton:hover {
-	background-color: rgb(40, 44, 52);
-}
-#bottomMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
-	color: rgb(255, 255, 255);
-} */
-/* #leftMenuFrame{
-	border-top: 3px solid rgb(44, 49, 58);
-} */
-
 /* Toggle Button */
 #toggleButton {
 	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 20px solid transparent;
-	/* background-color: rgb(37, 41, 48); */
 	text-align: left;
 	padding-left: 44px;
-	color: rgb(113, 126, 149);
 }
-/* #toggleButton:hover {
-	background-color: rgb(40, 44, 52);
-}
-#toggleButton:pressed {
-	background-color: rgb(189, 147, 249);
-} */
-
 /* Title Menu */
 #workspaceName { padding-left: 10px; }
 
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Extra Tab */
-#extraLeftBox {	
-	/* background-color: rgb(44, 49, 58); */
-}
-#extraTopBg{	
-	background-color: rgb(189, 147, 249)
-}
+
 
 /* Icon */
 #extraIcon {
@@ -127,14 +94,8 @@ Extra Tab */
 #extraLabel { color: rgb(255, 255, 255); }
 
 /* Btn Close */
-#extraCloseColumnBtn { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }
-#extraCloseColumnBtn:hover { background-color: rgb(196, 161, 249); border-style: solid; border-radius: 4px; }
-#extraCloseColumnBtn:pressed { background-color: rgb(180, 141, 238); border-style: solid; border-radius: 4px; }
+#extraCloseColumnBtn { border: none;  border-radius: 5px; }
 
-/* Extra Content */
-#extraContent{
-	/* border-top: 3px solid rgb(40, 44, 52); */
-}
 
 /* Extra Top Menus */
 #extraTopMenu .QPushButton {
@@ -142,14 +103,6 @@ background-position: left center;
     background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
-	background-color:transparent;
 	text-align: left;
 	padding-left: 44px;
-}
-#extraTopMenu .QPushButton:hover {
-	/* background-color: rgb(40, 44, 52); */
-}
-#extraTopMenu .QPushButton:pressed {	
-	background-color: rgb(189, 147, 249);
-	color: rgb(255, 255, 255);
 }
