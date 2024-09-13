@@ -18,13 +18,22 @@ from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
 # GUI FILE
-from . ui_main import Ui_MainWindow
+from .ui_main import Ui_MainWindow
 
 # APP SETTINGS
-from . app_settings import Settings
+from .app_settings import Settings
 
 # IMPORT FUNCTIONS
-from . ui_functions import *
+from .ui_functions import *
 
 # APP FUNCTIONS
-from . app_functions import *
+from .app_functions import *
+
+from .ui_cut_main import Ui_Form as _cut_main_from
+
+
+class CutMain(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent=parent)
+        self.ui = _cut_main_from()
+        self.ui.setupUi(self)

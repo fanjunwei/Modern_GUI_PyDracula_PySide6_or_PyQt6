@@ -35,6 +35,7 @@ Left Menu */
 .QFrame {
 	border: none;
 }
+
 /* #leftMenuBg {
 	background-color: rgb(33, 37, 43);
 } */
@@ -44,39 +45,49 @@ Left Menu */
 	background-position: centered;
 	background-repeat: no-repeat;
 }
-#titleLeftApp { font: 63 12pt "Segoe UI Semibold"; }
+
+#titleLeftApp {
+	font: 63 12pt "Segoe UI Semibold";
+}
+
 /* #titleLeftDescription { font: 8pt "Segoe UI"; color: rgb(189, 147, 249); } */
-#titleLeftDescription { font: 8pt "Segoe UI";}
+#titleLeftDescription {
+	font: 8pt "Segoe UI";
+}
 
 /* MENUS */
-#topMenu .QPushButton {	
+#topMenu .QPushButton {
 	background-position: left center;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
 	text-align: left;
 	padding-left: 44px;
 }
 
-#bottomMenu .QPushButton {	
+#bottomMenu .QPushButton {
 	background-position: left center;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	border: none;
 	border-left: 20px solid transparent;
 	text-align: left;
 	padding-left: 44px;
 }
+
 /* Toggle Button */
 #toggleButton {
 	background-position: left center;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	border: none;
 	border-left: 20px solid transparent;
 	text-align: left;
 	padding-left: 44px;
 }
+
 /* Title Menu */
-#workspaceName { padding-left: 10px; }
+#workspaceName {
+	padding-left: 10px;
+}
 
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,18 +102,27 @@ Extra Tab */
 }
 
 /* Label */
-#extraLabel { color: rgb(255, 255, 255); }
+#extraLabel {
+	color: rgb(255, 255, 255);
+}
 
 /* Btn Close */
-#extraCloseColumnBtn { border: none;  border-radius: 5px; }
+#extraCloseColumnBtn {
+	border: none;
+	border-radius: 5px;
+}
 
 
 /* Extra Top Menus */
 #extraTopMenu .QPushButton {
-background-position: left center;
-    background-repeat: no-repeat;
+	background-position: left center;
+	background-repeat: no-repeat;
 	border: none;
 	border-left: 22px solid transparent;
 	text-align: left;
 	padding-left: 44px;
+}
+
+#topMenu .QPushButton:checked {
+	border-left: 22px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:0.216, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0));
 }

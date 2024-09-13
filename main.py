@@ -27,6 +27,7 @@ from modules.app_functions import AppFunctions
 from modules.app_settings import Settings
 from modules.ui_functions import UIFunctions
 from modules.ui_main import Ui_MainWindow
+from modules import CutMain
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -46,6 +47,8 @@ class MainWindow(UIFunctions, AppFunctions, QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.cutMain = CutMain()
+        self.ui.stackedWidget.addWidget(self.cutMain)
         global widgets
         widgets = self.ui
 
@@ -140,7 +143,10 @@ class MainWindow(UIFunctions, AppFunctions, QMainWindow):
 
         # SHOW WIDGETS PAGE
         if btnName == "btn_widgets":
-            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+            # widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+
+            widgets.stackedWidget.setCurrentWidget(self.cutMain)
+
             self.resetOtherMenuStyle(btnName)
             btn.setChecked(True)
 
@@ -189,10 +195,32 @@ class TestWidget(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    # apply_stylesheet(app, theme="dark_purple.xml", css_file="themes/custom.css")
-    apply_stylesheet(app, theme="dark_purple.xml")
+    extra = {
+        # Button colors
+        "danger": "#dc3545",
+        "warning": "#ffc107",
+        "success": "#17a2b8",
+        # Font
+        "font_size": "10px",
+        "line_height": "10px",
+        # Density Scale
+        "density_scale": "0",
+        # environ
+        "pyside6": True,
+        "linux": True,
+    }
+    apply_stylesheet(
+        app,
+        theme="dark_purple.xml",
+        css_file="themes/custom.qss.j2",
+        extra=extra,
+    )
+    # apply_stylesheet(app, theme="dark_purple.xml")
+
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
     # test = TestWidget()
+    # test.show()
+    # test = CutMain()
     # test.show()
     sys.exit(app.exec_())

@@ -135,7 +135,7 @@ class Ui_MainWindow(object):
         self.btn_home.setFont(font)
         self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
+        self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-folder.png);")
         self.btn_home.setCheckable(True)
 
         self.verticalLayout_8.addWidget(self.btn_home)
@@ -148,7 +148,7 @@ class Ui_MainWindow(object):
         self.btn_widgets.setFont(font)
         self.btn_widgets.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_widgets.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-gamepad.png);")
+        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cut.png);")
         self.btn_widgets.setCheckable(True)
 
         self.verticalLayout_8.addWidget(self.btn_widgets)
@@ -379,6 +379,7 @@ class Ui_MainWindow(object):
         self.contentTopBg.setObjectName(u"contentTopBg")
         self.contentTopBg.setMinimumSize(QSize(0, 50))
         self.contentTopBg.setMaximumSize(QSize(16777215, 50))
+        self.contentTopBg.setStyleSheet(u"")
         self.contentTopBg.setFrameShape(QFrame.Shape.NoFrame)
         self.contentTopBg.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.contentTopBg)
@@ -484,6 +485,7 @@ class Ui_MainWindow(object):
 
         self.contentBottom = QFrame(self.contentBox)
         self.contentBottom.setObjectName(u"contentBottom")
+        self.contentBottom.setStyleSheet(u"")
         self.contentBottom.setFrameShape(QFrame.Shape.NoFrame)
         self.contentBottom.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.contentBottom)
@@ -506,7 +508,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_15 = QVBoxLayout(self.pagesContainer)
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(10, 10, 10, 10)
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.home = QWidget()
@@ -646,7 +648,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 332, 224))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 224, 224))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    width: 14px;\n"
@@ -999,7 +1001,14 @@ class Ui_MainWindow(object):
         self.creditsLabel = QLabel(self.bottomBar)
         self.creditsLabel.setObjectName(u"creditsLabel")
         self.creditsLabel.setMaximumSize(QSize(16777215, 16))
-        self.creditsLabel.setFont(font)
+        font4 = QFont()
+        font4.setFamilies([u"Segoe UI"])
+        font4.setPointSize(9)
+        font4.setBold(False)
+        font4.setItalic(False)
+        self.creditsLabel.setFont(font4)
+        self.creditsLabel.setStyleSheet(u"font-size: 9pt;\n"
+"color: rgb(142, 142, 142)")
         self.creditsLabel.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_5.addWidget(self.creditsLabel)
@@ -1046,8 +1055,8 @@ class Ui_MainWindow(object):
         self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"SQ Cut", None))
         self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"\u7b80\u5355\u5feb\u901f\u7684\u526a\u8f91\u5de5\u5177", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"\u9690\u85cf", None))
-        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
+        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"\u6253\u5f00", None))
+        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"\u89c6\u9891\u526a\u8f91", None))
         self.btn_new.setText(QCoreApplication.translate("MainWindow", u"New", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))

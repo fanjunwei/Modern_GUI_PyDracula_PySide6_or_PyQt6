@@ -75,3 +75,13 @@ After expoting in .py and change the line "import resources_rc" to "from. Resouc
 
 
 
+
+Environ variable	Description	Example
+QTMATERIAL_PRIMARYCOLOR	Primary color	#2979ff
+QTMATERIAL_PRIMARYLIGHTCOLOR	A bright version of the primary color	#75a7ff
+QTMATERIAL_SECONDARYCOLOR	Secondary color	#f5f5f5
+QTMATERIAL_SECONDARYLIGHTCOLOR	A bright version of the secondary color	#ffffff
+QTMATERIAL_SECONDARYDARKCOLOR	A dark version of the primary color	#e6e6e6
+QTMATERIAL_PRIMARYTEXTCOLOR	Color for text over primary background	#000000
+QTMATERIAL_SECONDARYTEXTCOLOR	Color for text over secondary background	#000000
+QTMATERIAL_THEME	Name of theme used	light_blue.xml

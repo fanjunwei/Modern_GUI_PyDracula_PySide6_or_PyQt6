@@ -359,10 +359,10 @@
                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-home.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-folder.png);</string>
                   </property>
                   <property name="text">
-                   <string>Home</string>
+                   <string>打开</string>
                   </property>
                   <property name="checkable">
                    <bool>true</bool>
@@ -398,10 +398,10 @@
                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-gamepad.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cut.png);</string>
                   </property>
                   <property name="text">
-                   <string>Widgets</string>
+                   <string>视频剪辑</string>
                   </property>
                   <property name="checkable">
                    <bool>true</bool>
@@ -1016,6 +1016,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
               <height>50</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::Shape::NoFrame</enum>
             </property>
@@ -1288,6 +1291,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
           </item>
           <item>
            <widget class="QFrame" name="contentBottom">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::Shape::NoFrame</enum>
             </property>
@@ -1350,16 +1356,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <number>0</number>
                    </property>
                    <property name="leftMargin">
-                    <number>10</number>
+                    <number>0</number>
                    </property>
                    <property name="topMargin">
-                    <number>10</number>
+                    <number>0</number>
                    </property>
                    <property name="rightMargin">
-                    <number>10</number>
+                    <number>0</number>
                    </property>
                    <property name="bottomMargin">
-                    <number>10</number>
+                    <number>0</number>
                    </property>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
@@ -1650,7 +1656,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>332</width>
+                                 <width>224</width>
                                  <height>224</height>
                                 </rect>
                                </property>
@@ -2523,10 +2529,14 @@ background-repeat: no-repeat;</string>
                   <property name="font">
                    <font>
                     <family>Segoe UI</family>
-                    <pointsize>10</pointsize>
+                    <pointsize>9</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font-size: 9pt;
+color: rgb(142, 142, 142)</string>
                   </property>
                   <property name="text">
                    <string>By: 范俊伟</string>
