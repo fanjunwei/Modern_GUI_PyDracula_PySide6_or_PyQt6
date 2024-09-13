@@ -1,4 +1,37 @@
 {
     "pyqt-integration.pyuic.compile.filepath": "modules/ui_${ui_name}.py",
-    "pyqt-integration.pyrcc.compile.filepath": "modules/${qrc_name}_rc.py"
+    "pyqt-integration.pyrcc.compile.filepath": "modules/${qrc_name}_rc.py",
+    "python.analysis.extraPaths": [
+        "/Users/fanjunwei/Documents/PythonProjects/Modern_GUI_PyDracula_PySide6_or_PyQt6/venv/lib/python3.9/site-packages"
+    ],
+    "python.analysis.packageIndexDepths": [
+        {
+            "name": "PySide6",
+            "depth": 2
+        },
+        {
+            "name": "sklearn",
+            "depth": 2
+        },
+        {
+            "name": "matplotlib",
+            "depth": 2
+        },
+        {
+            "name": "scipy",
+            "depth": 2
+        },
+        {
+            "name": "django",
+            "depth": 2
+        },
+        {
+            "name": "flask",
+            "depth": 2
+        },
+        {
+            "name": "fastapi",
+            "depth": 2
+        }
+    ]
 }

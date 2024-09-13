@@ -19,8 +19,9 @@ import sys
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget
 from PySide6.QtWidgets import QMainWindow
+from qt_material import apply_stylesheet
 
 from modules.app_functions import AppFunctions
 from modules.app_settings import Settings
@@ -114,6 +115,9 @@ class MainWindow(UIFunctions, AppFunctions, QMainWindow):
 
             # SET HACKS
             self.setThemeHack()
+        else:
+            pass
+            self.theme("themes/base.qss", True)
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
@@ -173,8 +177,24 @@ class MainWindow(UIFunctions, AppFunctions, QMainWindow):
             print("Mouse click: RIGHT CLICK")
 
 
+class TestWidget(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Test")
+        self.resize(300, 200)
+        self.layout = QVBoxLayout()
+        self.layout.addWidget(QLabel("This is a test"))
+        self.button = QPushButton("Open")
+        self.layout.addWidget(self.button)
+        self.setLayout(self.layout)
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    # apply_stylesheet(app, theme="dark_purple.xml", css_file="themes/custom.css")
+    apply_stylesheet(app, theme="dark_purple.xml")
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
+    # test = TestWidget()
+    # test.show()
     sys.exit(app.exec_())
