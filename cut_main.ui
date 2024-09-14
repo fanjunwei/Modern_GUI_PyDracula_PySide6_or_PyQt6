@@ -331,6 +331,27 @@ color: rgb(255, 255, 255);</string>
                  </property>
                 </widget>
                </item>
+               <item>
+                <widget class="QPushButton" name="play_to_start">
+                 <property name="text">
+                  <string>|&lt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="play">
+                 <property name="text">
+                  <string>&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="play_to_end">
+                 <property name="text">
+                  <string>&gt;|</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>

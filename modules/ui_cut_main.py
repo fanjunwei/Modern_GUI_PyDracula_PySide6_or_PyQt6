@@ -166,6 +166,21 @@ class Ui_Form(object):
 
         self.horizontalLayout_7.addWidget(self.label_8)
 
+        self.play_to_start = QPushButton(self.frame_10)
+        self.play_to_start.setObjectName(u"play_to_start")
+
+        self.horizontalLayout_7.addWidget(self.play_to_start)
+
+        self.play = QPushButton(self.frame_10)
+        self.play.setObjectName(u"play")
+
+        self.horizontalLayout_7.addWidget(self.play)
+
+        self.play_to_end = QPushButton(self.frame_10)
+        self.play_to_end.setObjectName(u"play_to_end")
+
+        self.horizontalLayout_7.addWidget(self.play_to_end)
+
 
         self.verticalLayout_7.addWidget(self.frame_10)
 
@@ -270,6 +285,9 @@ class Ui_Form(object):
         self.label.setText(QCoreApplication.translate("Form", u"\u64ad\u653e\u5668", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.label_8.setText(QCoreApplication.translate("Form", u"10:00:00", None))
+        self.play_to_start.setText(QCoreApplication.translate("Form", u"|<", None))
+        self.play.setText(QCoreApplication.translate("Form", u">", None))
+        self.play_to_end.setText(QCoreApplication.translate("Form", u">|", None))
         self.label_6.setText(QCoreApplication.translate("Form", u"\u53c2\u6570", None))
         self.label_9.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.label_10.setText(QCoreApplication.translate("Form", u"TextLabel", None))

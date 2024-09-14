@@ -223,4 +223,4 @@ if __name__ == "__main__":
     # test.show()
     # test = CutMain()
     # test.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
